@@ -29,6 +29,7 @@ void draw() {
   
   float rmsScaled = sum * (height/2) * scale;
   
+  line(640, 360, rmsScaled, 360);
   line(640, 360, 640, rmsScaled);
 
 }
