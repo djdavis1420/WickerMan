@@ -57,5 +57,11 @@ void draw() {
   line(640, 360, (640 - horizontalRange), 360);
   line(640, 360, 640, (360 + verticalRange));
   line(640, 360, 640, (360 - verticalRange));
+  
+  stroke(#0cd30c);
+  strokeWeight(5);
+  for (int i = 0; i < fft.specSize(); i++) {
+    line(i * 10, height, i * 10, height - fft.getBand(i) * 4);
+  }
 
 }
