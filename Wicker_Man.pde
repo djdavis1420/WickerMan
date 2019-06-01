@@ -13,5 +13,10 @@ void setup() {
 
 void draw() {
   background(0, 0, 0);
+  
+  stroke(183, 29, 37);
+  strokeWeight(10);
+  
+  line(640, 360, 640, 600);
 
 }
