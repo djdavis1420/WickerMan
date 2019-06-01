@@ -26,33 +26,31 @@ void draw() {
   float rmsVertical = sum * (height/2);
   
   stroke(#FFFFFF);
-  strokeWeight(50);
+  strokeWeight(75);
   line(640, 360, (640 + rmsHorizontal), (360 + rmsVertical));
   line(640, 360, (640 + rmsHorizontal), (360 - rmsVertical));
   line(640, 360, (640 - rmsHorizontal), (360 + rmsVertical));
   line(640, 360, (640 - rmsHorizontal), (360 - rmsVertical));
   
   stroke(#CF142B);
-  strokeWeight(10);
+  strokeWeight(25);
   line(640, 360, (640 + rmsHorizontal), (360 + rmsVertical));
   line(640, 360, (640 + rmsHorizontal), (360 - rmsVertical));
   line(640, 360, (640 - rmsHorizontal), (360 + rmsVertical));
   line(640, 360, (640 - rmsHorizontal), (360 - rmsVertical));
   
   stroke(#FFFFFF);
-  strokeWeight(50);  
+  strokeWeight(100);  
   line(640, 360, (640 + rmsHorizontal), 360);
   line(640, 360, (640 - rmsHorizontal), 360);
   line(640, 360, 640, (360 + rmsVertical));
   line(640, 360, 640, (360 - rmsVertical));
 
   stroke(#CF142B);
-  strokeWeight(10);
+  strokeWeight(75);
   line(640, 360, (640 + rmsHorizontal), 360);
   line(640, 360, (640 - rmsHorizontal), 360);
   line(640, 360, 640, (360 + rmsVertical));
   line(640, 360, 640, (360 - rmsVertical));
-
-
 
 }
