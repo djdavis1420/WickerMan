@@ -1,7 +1,12 @@
-import processing.sound.*;
 
-SoundFile sample;
-Amplitude rms;
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+
+Minim minim;
+AudioPlayer song;
+int sampleSize = 1024;
+int bandCount = 0;
+FFT fft;
 
 float smoothFactor = 0.25;
 
@@ -9,18 +14,20 @@ float sum;
 
 void setup() {
   size(1280, 720);
-  
-  sample = new SoundFile(this, "Wicker_Man.mp3");
-  sample.loop();
-  
-  rms = new Amplitude(this);
-  rms.input(sample);
+  minim = new Minim(this);
+  song = minim.loadFile("Wicker_Man.mp3", sampleSize);
+  song.loop();
+  fft = new FFT(song.bufferSize(), song.sampleRate() );
 }
 
 void draw() {
   background(#00247D);
   
-  sum += (rms.analyze() - sum) * smoothFactor;
+  fft.forward(song.mix);
+  
+  float amplitude = fft.calcAvg(0, 20000);
+  
+  sum += (amplitude / 3.5 - sum) * smoothFactor;
   
   float rmsHorizontal = sum * (width/2);
   float rmsVertical = sum * (height/2);
