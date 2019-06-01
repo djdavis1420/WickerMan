@@ -1,7 +1,13 @@
 import processing.sound.*;
 
 SoundFile sample;
+Amplitude rms;
 
+float scale = 2.0;
+
+float smoothFactor = 0.25;
+
+float sum;
 
 void setup() {
   size(1280, 720);
@@ -9,6 +15,8 @@ void setup() {
   sample = new SoundFile(this, "Wicker_Man.mp3");
   sample.loop();
   
+  rms = new Amplitude(this);
+  rms.input(sample);
 }
 
 void draw() {
@@ -17,6 +25,10 @@ void draw() {
   stroke(183, 29, 37);
   strokeWeight(10);
   
-  line(640, 360, 640, 600);
+  sum += (rms.analyze() - sum) * smoothFactor;
+  
+  float rmsScaled = sum * (height/2) * scale;
+  
+  line(640, 360, 640, rmsScaled);
 
 }
