@@ -27,10 +27,10 @@ void draw() {
   
   stroke(#FFFFFF);
   strokeWeight(75);
-  line(640, 360, (640 + rmsHorizontal), (360 + rmsVertical));
-  line(640, 360, (640 + rmsHorizontal), (360 - rmsVertical));
-  line(640, 360, (640 - rmsHorizontal), (360 + rmsVertical));
-  line(640, 360, (640 - rmsHorizontal), (360 - rmsVertical));
+  line(640, 360, 0, 0);
+  line(640, 360, 1280, 0);
+  line(640, 360, 1280, 720);
+  line(640, 360, 0, 720);
   
   stroke(#CF142B);
   strokeWeight(25);
@@ -41,10 +41,10 @@ void draw() {
   
   stroke(#FFFFFF);
   strokeWeight(100);  
-  line(640, 360, (640 + rmsHorizontal), 360);
-  line(640, 360, (640 - rmsHorizontal), 360);
-  line(640, 360, 640, (360 + rmsVertical));
-  line(640, 360, 640, (360 - rmsVertical));
+  line(640, 360, 640, 0);
+  line(640, 360, 1280, 360);
+  line(640, 360, 640, 720);
+  line(640, 360, 0, 360);
 
   stroke(#CF142B);
   strokeWeight(75);
