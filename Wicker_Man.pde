@@ -7,9 +7,7 @@ AudioPlayer song;
 int sampleSize = 1024;
 int bandCount = 0;
 FFT fft;
-
 float smoothFactor = 0.25;
-
 float sum;
 
 void setup() {
@@ -29,8 +27,8 @@ void draw() {
   
   sum += (amplitude / 3.5 - sum) * smoothFactor;
   
-  float rmsHorizontal = sum * (width/2);
-  float rmsVertical = sum * (height/2);
+  float horizontalRange = sum * (width/2);
+  float verticalRange = sum * (height/2);
   
   stroke(#FFFFFF);
   strokeWeight(75);
@@ -41,10 +39,10 @@ void draw() {
   
   stroke(#CF142B);
   strokeWeight(35);
-  line(640, 360, (640 + rmsHorizontal), (360 + rmsVertical));
-  line(640, 360, (640 + rmsHorizontal), (360 - rmsVertical));
-  line(640, 360, (640 - rmsHorizontal), (360 + rmsVertical));
-  line(640, 360, (640 - rmsHorizontal), (360 - rmsVertical));
+  line(640, 360, (640 + horizontalRange), (360 + verticalRange));
+  line(640, 360, (640 + horizontalRange), (360 - verticalRange));
+  line(640, 360, (640 - horizontalRange), (360 + verticalRange));
+  line(640, 360, (640 - horizontalRange), (360 - verticalRange));
   
   stroke(#FFFFFF);
   strokeWeight(125);  
@@ -55,9 +53,9 @@ void draw() {
 
   stroke(#CF142B);
   strokeWeight(80);
-  line(640, 360, (640 + rmsHorizontal), 360);
-  line(640, 360, (640 - rmsHorizontal), 360);
-  line(640, 360, 640, (360 + rmsVertical));
-  line(640, 360, 640, (360 - rmsVertical));
+  line(640, 360, (640 + horizontalRange), 360);
+  line(640, 360, (640 - horizontalRange), 360);
+  line(640, 360, 640, (360 + verticalRange));
+  line(640, 360, 640, (360 - verticalRange));
 
 }
