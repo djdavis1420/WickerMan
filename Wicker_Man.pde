@@ -33,21 +33,21 @@ void draw() {
   line(640, 360, 0, 720);
   
   stroke(#CF142B);
-  strokeWeight(25);
+  strokeWeight(35);
   line(640, 360, (640 + rmsHorizontal), (360 + rmsVertical));
   line(640, 360, (640 + rmsHorizontal), (360 - rmsVertical));
   line(640, 360, (640 - rmsHorizontal), (360 + rmsVertical));
   line(640, 360, (640 - rmsHorizontal), (360 - rmsVertical));
   
   stroke(#FFFFFF);
-  strokeWeight(100);  
+  strokeWeight(125);  
   line(640, 360, 640, 0);
   line(640, 360, 1280, 360);
   line(640, 360, 640, 720);
   line(640, 360, 0, 360);
 
   stroke(#CF142B);
-  strokeWeight(75);
+  strokeWeight(80);
   line(640, 360, (640 + rmsHorizontal), 360);
   line(640, 360, (640 - rmsHorizontal), 360);
   line(640, 360, 640, (360 + rmsVertical));
