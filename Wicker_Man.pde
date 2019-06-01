@@ -26,8 +26,12 @@ void draw() {
   sum += (rms.analyze() - sum) * smoothFactor;
   
   float rmsHorizontal = sum * (width/2);
+  float rmsVertical = sum * (height/2);
   
   line(640, 360, (640 + rmsHorizontal), 360);
   line(640, 360, (640 - rmsHorizontal), 360);
+
+  line(640, 360, 640, (360 + rmsVertical));
+  line(640, 360, 640, (360 - rmsVertical));
 
 }
