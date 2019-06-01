@@ -3,8 +3,6 @@ import processing.sound.*;
 SoundFile sample;
 Amplitude rms;
 
-float scale = 2.0;
-
 float smoothFactor = 0.25;
 
 float sum;
@@ -27,9 +25,9 @@ void draw() {
   
   sum += (rms.analyze() - sum) * smoothFactor;
   
-  float rmsScaled = sum * (height/2) * scale;
+  float rmsHorizontal = sum * (width/2);
   
-  line(640, 360, (640 + rmsScaled), 360);
-  line(640, 360, (640 - rmsScaled), 360);
+  line(640, 360, (640 + rmsHorizontal), 360);
+  line(640, 360, (640 - rmsHorizontal), 360);
 
 }
