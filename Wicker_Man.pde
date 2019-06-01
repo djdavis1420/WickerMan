@@ -30,8 +30,12 @@ void draw() {
   
   line(640, 360, (640 + rmsHorizontal), 360);
   line(640, 360, (640 - rmsHorizontal), 360);
-
   line(640, 360, 640, (360 + rmsVertical));
   line(640, 360, 640, (360 - rmsVertical));
+
+  line(640, 360, (640 + rmsHorizontal), (360 + rmsVertical));
+  line(640, 360, (640 + rmsHorizontal), (360 - rmsVertical));
+  line(640, 360, (640 - rmsHorizontal), (360 + rmsVertical));
+  line(640, 360, (640 - rmsHorizontal), (360 - rmsVertical));
 
 }
