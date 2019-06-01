@@ -18,9 +18,9 @@ void setup() {
 }
 
 void draw() {
-  background(0, 0, 0);
+  background(#00247D);
   
-  stroke(183, 29, 37);
+  stroke(#CF142B);
   strokeWeight(10);
   
   sum += (rms.analyze() - sum) * smoothFactor;
