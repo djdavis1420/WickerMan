@@ -20,22 +20,39 @@ void setup() {
 void draw() {
   background(#00247D);
   
-  stroke(#CF142B);
-  strokeWeight(10);
-  
   sum += (rms.analyze() - sum) * smoothFactor;
   
   float rmsHorizontal = sum * (width/2);
   float rmsVertical = sum * (height/2);
   
+  stroke(#FFFFFF);
+  strokeWeight(50);
+  line(640, 360, (640 + rmsHorizontal), (360 + rmsVertical));
+  line(640, 360, (640 + rmsHorizontal), (360 - rmsVertical));
+  line(640, 360, (640 - rmsHorizontal), (360 + rmsVertical));
+  line(640, 360, (640 - rmsHorizontal), (360 - rmsVertical));
+  
+  stroke(#CF142B);
+  strokeWeight(10);
+  line(640, 360, (640 + rmsHorizontal), (360 + rmsVertical));
+  line(640, 360, (640 + rmsHorizontal), (360 - rmsVertical));
+  line(640, 360, (640 - rmsHorizontal), (360 + rmsVertical));
+  line(640, 360, (640 - rmsHorizontal), (360 - rmsVertical));
+  
+  stroke(#FFFFFF);
+  strokeWeight(50);  
   line(640, 360, (640 + rmsHorizontal), 360);
   line(640, 360, (640 - rmsHorizontal), 360);
   line(640, 360, 640, (360 + rmsVertical));
   line(640, 360, 640, (360 - rmsVertical));
 
-  line(640, 360, (640 + rmsHorizontal), (360 + rmsVertical));
-  line(640, 360, (640 + rmsHorizontal), (360 - rmsVertical));
-  line(640, 360, (640 - rmsHorizontal), (360 + rmsVertical));
-  line(640, 360, (640 - rmsHorizontal), (360 - rmsVertical));
+  stroke(#CF142B);
+  strokeWeight(10);
+  line(640, 360, (640 + rmsHorizontal), 360);
+  line(640, 360, (640 - rmsHorizontal), 360);
+  line(640, 360, 640, (360 + rmsVertical));
+  line(640, 360, 640, (360 - rmsVertical));
+
+
 
 }
